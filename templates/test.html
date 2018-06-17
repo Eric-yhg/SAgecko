@@ -1,0 +1,36 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+
+<h1 style="...">用户输入</h1>
+    <form action="/test/" method="post">
+           <h5 >用户名</h5>
+          <input type="text" name="name"/>
+           <h5 >qq</h5>
+          <input type="text" name="qq"/>
+           <h5 >department</h5>
+          <input type="text" name="department"/>
+           <h5 >consult_course_id</h5>
+          <input type="text" name="consult_course_id"/>
+
+          <input class="btn btn-primary fa btn-label" type="submit" value="提交"/>
+    </form>
+     <table border="1">
+         <thead>
+                <th>用户名</th>
+                <th>QQ</th>
+                <th>部门</th>
+                <th>课程</th>
+         </thead>
+         <tbody>
+            {% for line in data %}
+               <tr>
+                   <td>{{ line.name }}</td>
+                   <td>{{ line.qq }}</td>
+                   <td>{{ line.department }}</td>
+                   <td>{{ line.consult_course_id }}</td>
+                </tr>
+             {% endfor %}
+
+     </table>
+
+{% endblock %}

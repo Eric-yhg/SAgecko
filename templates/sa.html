@@ -1,0 +1,36 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+    <h1 class="page-header">管理人员</h1>
+<div class="bs-example" data-example-id="striped-table">
+            <div class="bars pull-left">
+               <a href="{% url 'add_sa' %}" ><button class="btn btn-primary fa btn-label" style="margin-top: 10px;size:30px">添加</button></a>
+                <button class="btn btn-danger fa del_asset"  style="margin-top: 10px">删除</button>
+            </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>用户名</th>
+          <th>QQ</th>
+          <th>职位</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for sa in sas %}
+             <tr>
+              <th scope="row">{{ sa.id }}</th>
+              <td>{{ sa.name }}</td>
+              <td>{{ sa.qq }}</td>
+              <td>{{ sa.position }}</td>
+              <td></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+{% endblock %}

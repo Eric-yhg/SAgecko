@@ -1,0 +1,27 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+         <input id='na' type="text" />
+         <input type="button" value="点击执行ajax请求" onclick='DoAjax();' />
+         <script src="/static/js/jquery.min.js"></script>
+         <script type='text/javascript'>
+                 function DoAjax() {
+                     var temp = $('#na').val();
+                     $.ajax({
+                         url:'http://127.0.0.1:8000/ceshi/',
+                         type:'POST',
+                         data:{data:temp},
+                         success:function (arg) {
+                             var obj = jQuery.parseJSON(arg);
+                             console.log(obj.status);
+                             console.log(obj.msg);
+                             console.log(obj.data);
+                             console.log('success');
+                             $('#na').val(obj.msg);
+                         },
+                         error:function () {
+                              console.log('failed')
+                         }
+                         });
+                 }
+         </script>
+{% endblock %}

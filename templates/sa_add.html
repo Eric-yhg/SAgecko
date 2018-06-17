@@ -1,0 +1,16 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+
+<h1 style="...">添加</h1>
+    <form action="/add_admin_list/" method="post">
+           <h5 >用户名</h5>
+          <input type="text" name="name"/>
+           <h5 >qq</h5>
+          <input type="text" name="qq"/>
+           <h5 >department</h5>
+          <input type="text" name="department"/>
+           <h5 >consult_course_id</h5>
+          <input type="text" name="consult_course_id"/>
+          <input class="btn btn-primary fa btn-label" type="submit" value="提交"/>
+    </form>
+{% endblock %}

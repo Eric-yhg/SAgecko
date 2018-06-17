@@ -1,0 +1,10 @@
+{%  extends 'index.html' %}
+{% block page-content %}
+
+<h1 style="...">删除</h1>
+    <form action="/add_admin_list/" method="post">
+           <h5 >用户名</h5>
+          <input type="text" name="name"/>
+          <input class="btn btn-danger fa btn-label" type="submit" value="删除"/>
+    </form>
+{% endblock %}

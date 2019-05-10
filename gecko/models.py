@@ -14,7 +14,7 @@ class Administrators(models.Model):
         position = models.CharField(max_length=32,blank=True,null=True)
         qq = models.CharField(max_length=64, unique=True)
         date = models.DateTimeField(auto_now_add=True)
-        tags = models.ManyToManyField("Tag", blank=True, null=True)
+        tags = models.ManyToManyField("Tag", blank=True)
         class Meta:
             verbose_name = "维护人"
             verbose_name_plural = "维护人"
